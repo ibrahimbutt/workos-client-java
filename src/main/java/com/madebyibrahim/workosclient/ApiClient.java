@@ -1,4 +1,4 @@
-package org.openapitools.client;
+package com.madebyibrahim.workosclient;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -56,10 +56,10 @@ import java.util.TimeZone;
 import java.util.function.Supplier;
 import java.time.OffsetDateTime;
 
-import org.openapitools.client.auth.Authentication;
-import org.openapitools.client.auth.HttpBearerAuth;
+import com.madebyibrahim.workosclient.auth.Authentication;
+import com.madebyibrahim.workosclient.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T15:32:47.282696Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
 public class ApiClient extends JavaTimeFormatter {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);

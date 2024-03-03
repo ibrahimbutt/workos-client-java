@@ -21,11 +21,11 @@ Create a new user
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.auth.*;
+import com.madebyibrahim.workosclient.models.*;
 import org.openapitools.client.api.UsersApi;
 
 public class Example {
@@ -95,11 +95,11 @@ Get a user by ID
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.auth.*;
+import com.madebyibrahim.workosclient.models.*;
 import org.openapitools.client.api.UsersApi;
 
 public class Example {
@@ -169,11 +169,11 @@ Get all users
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.auth.*;
+import com.madebyibrahim.workosclient.models.*;
 import org.openapitools.client.api.UsersApi;
 
 public class Example {
@@ -248,11 +248,11 @@ Update a user by ID
 
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.auth.*;
+import com.madebyibrahim.workosclient.models.*;
 import org.openapitools.client.api.UsersApi;
 
 public class Example {

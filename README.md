@@ -1,10 +1,10 @@
-# openapi-java-client
+# workos-client
 
 External User Management API
 
 - API version: 1.0.0
 
-- Build date: 2024-03-03T15:32:47.282696Z[Europe/London]
+- Build date: 2024-03-03T18:52:34.218849Z[Europe/London]
 
 API for managing user information
 
@@ -40,9 +40,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>org.openapitools</groupId>
-  <artifactId>openapi-java-client</artifactId>
-  <version>1.0.0</version>
+  <groupId>com.madebyibrahim</groupId>
+  <artifactId>workos-client</artifactId>
+  <version>0.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -53,12 +53,12 @@ Add this dependency to your project's build file:
 
 ```groovy
   repositories {
-    mavenCentral()     // Needed if the 'openapi-java-client' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'openapi-java-client' jar has been published to the local maven repo.
+    mavenCentral()     // Needed if the 'workos-client' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'workos-client' jar has been published to the local maven repo.
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-java-client:1.0.0"
+     implementation "com.madebyibrahim:workos-client:0.1.0"
   }
 ```
 
@@ -72,7 +72,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/openapi-java-client-1.0.0.jar`
+- `target/workos-client-0.1.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -81,8 +81,8 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.*;
-import org.openapitools.client.auth.*;
+import com.madebyibrahim.workosclient.*;
+import com.madebyibrahim.workosclient.auth.*;
 import org.openapitools.client.model.*;
 import org.openapitools.client.api.UsersApi;
 

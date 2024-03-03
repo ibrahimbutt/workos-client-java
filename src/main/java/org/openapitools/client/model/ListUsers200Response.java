@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListUsers200Response.JSON_PROPERTY_LIST_METADATA
 })
 @JsonTypeName("listUsers_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T15:32:47.282696Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
 public class ListUsers200Response {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<User> data;

@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CreateUserRequest.JSON_PROPERTY_LAST_NAME,
   CreateUserRequest.JSON_PROPERTY_EMAIL_VERIFIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T15:32:47.282696Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
 public class CreateUserRequest {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;

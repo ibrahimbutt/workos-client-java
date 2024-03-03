@@ -1,4 +1,4 @@
-package org.openapitools.client.auth;
+package com.madebyibrahim.workosclient.auth;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;

@@ -1,8 +1,8 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
-group = 'org.openapitools'
-version = '0.1.0-alpha'
+group = 'com.madebyibrahim'
+version = '0.1.0'
 
 buildscript {
     repositories {
@@ -19,7 +19,7 @@ repositories {
 }
 
 
-if (hasProperty('target') && target == 'android') {
+if(hasProperty('target') && target == 'android') {
 
     apply plugin: 'com.android.library'
     apply plugin: 'com.github.dcendents.android-maven'
@@ -84,27 +84,15 @@ if (hasProperty('target') && target == 'android') {
     publishing {
         publications {
             maven(MavenPublication) {
-                groupId = 'com.madebyibrahim'
-                artifactId = 'openapi-java-client'
-                from components.java
+               artifactId = 'workos-client'
+               from components.java
             }
         }
     }
 
-    repositories {
-        maven {
-            name = 'GitHubPackages'
-            url = uri("https://maven.pkg.github.com/ibrahimbutt/workos-client-java")
-            credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
-                password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
-
-    task execute(type: JavaExec) {
-        mainClass = System.getProperty('mainClass')
-        classpath = sourceSets.main.runtimeClasspath
+    task execute(type:JavaExec) {
+       mainClass = System.getProperty('mainClass')
+       classpath = sourceSets.main.runtimeClasspath
     }
 }
 

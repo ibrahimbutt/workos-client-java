@@ -1,4 +1,4 @@
-package org.openapitools.client.auth;
+package com.madebyibrahim.workosclient.auth;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
@@ -6,7 +6,7 @@ import java.util.Base64;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T15:32:47.282696Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
 public class HttpBasicAuth implements Authentication {
     private String username;
     private String password;

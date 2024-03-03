@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListUsers200ResponseListMetadata.JSON_PROPERTY_AFTER
 })
 @JsonTypeName("listUsers_200_response_list_metadata")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T15:32:47.282696Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
 public class ListUsers200ResponseListMetadata {
   public static final String JSON_PROPERTY_BEFORE = "before";
   private String before;

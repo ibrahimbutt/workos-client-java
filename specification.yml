@@ -3,6 +3,7 @@ info:
   title: External User Management API
   version: 1.0.0
   description: API for managing user information
+
 servers:
   - url: https://api.workos.com
 paths:

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package org.openapitools.client;
+package com.madebyibrahim.workosclient;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 

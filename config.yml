@@ -1,0 +1,10 @@
+generatorName: java
+outputDir: .
+inputSpec: specification.yml
+additionalProperties:
+  library: resttemplate
+  invokerPackage: com.madebyibrahim.workosclient
+  groupId: com.madebyibrahim
+  artifactId: workos-client
+  artifactVersion: 0.1.0
+  buildTool: maven

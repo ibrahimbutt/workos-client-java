@@ -1,4 +1,4 @@
-package org.openapitools.client;
+package com.madebyibrahim.workosclient;
 
 import java.util.Map;
 

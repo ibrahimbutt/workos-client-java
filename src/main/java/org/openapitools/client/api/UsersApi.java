@@ -1,6 +1,6 @@
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiClient;
+import com.madebyibrahim.workosclient.ApiClient;
 
 import org.openapitools.client.model.CreateUserRequest;
 import org.openapitools.client.model.ListUsers200Response;
@@ -28,7 +28,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T15:32:47.282696Z[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
 public class UsersApi {
     private ApiClient apiClient;
 
