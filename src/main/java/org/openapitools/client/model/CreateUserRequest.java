@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CreateUserRequest.JSON_PROPERTY_LAST_NAME,
   CreateUserRequest.JSON_PROPERTY_EMAIL_VERIFIED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateUserRequest {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -63,7 +63,7 @@ public class CreateUserRequest {
    * The user&#39;s email address
    * @return email
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -89,7 +89,7 @@ public class CreateUserRequest {
    * The user&#39;s password
    * @return password
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_PASSWORD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -115,7 +115,7 @@ public class CreateUserRequest {
    * The user&#39;s first name
    * @return firstName
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -141,7 +141,7 @@ public class CreateUserRequest {
    * The user&#39;s last name
    * @return lastName
   **/
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -167,7 +167,7 @@ public class CreateUserRequest {
    * Whether the user&#39;s email address has been verified
    * @return emailVerified
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

@@ -2,10 +2,12 @@ generatorName: java
 outputDir: .
 inputSpec: specification.yml
 additionalProperties:
+  hideGenerationTimestamp: true
   library: resttemplate
   invokerPackage: com.madebyibrahim.workosclient
   groupId: com.madebyibrahim
   artifactId: workos-client
   artifactVersion: 0.1.0
   buildTool: maven
+  useSpringBoot3: true
   useJakartaEe: true

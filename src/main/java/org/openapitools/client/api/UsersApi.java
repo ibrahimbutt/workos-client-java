@@ -28,7 +28,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UsersApi {
     private ApiClient apiClient;
 
@@ -51,7 +51,7 @@ public class UsersApi {
     /**
      * Create a new user
      * 
-     * <p><b>200</b> - User created successfully
+     * <p><b>201</b> - User created successfully
      * <p><b>400</b> - Bad request
      * <p><b>401</b> - Unauthorized
      * <p><b>403</b> - Forbidden
@@ -68,7 +68,7 @@ public class UsersApi {
     /**
      * Create a new user
      * 
-     * <p><b>200</b> - User created successfully
+     * <p><b>201</b> - User created successfully
      * <p><b>400</b> - Bad request
      * <p><b>401</b> - Unauthorized
      * <p><b>403</b> - Forbidden

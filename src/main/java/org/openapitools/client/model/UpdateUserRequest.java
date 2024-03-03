@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   UpdateUserRequest.JSON_PROPERTY_EMAIL_VERIFIED,
   UpdateUserRequest.JSON_PROPERTY_PASSWORD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateUserRequest {
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -63,7 +63,7 @@ public class UpdateUserRequest {
    * The user&#39;s email address
    * @return email
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -89,7 +89,7 @@ public class UpdateUserRequest {
    * The user&#39;s first name
    * @return firstName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -115,7 +115,7 @@ public class UpdateUserRequest {
    * The user&#39;s last name
    * @return lastName
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -141,7 +141,7 @@ public class UpdateUserRequest {
    * Whether the user&#39;s email address has been verified
    * @return emailVerified
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_EMAIL_VERIFIED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -167,7 +167,7 @@ public class UpdateUserRequest {
    * The user&#39;s password
    * @return password
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_PASSWORD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

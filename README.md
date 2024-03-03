@@ -4,8 +4,6 @@ External User Management API
 
 - API version: 1.0.0
 
-- Build date: 2024-03-03T18:52:34.218849Z[Europe/London]
-
 API for managing user information
 
 

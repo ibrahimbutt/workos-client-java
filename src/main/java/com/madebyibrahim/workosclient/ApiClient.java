@@ -59,7 +59,7 @@ import java.time.OffsetDateTime;
 import com.madebyibrahim.workosclient.auth.Authentication;
 import com.madebyibrahim.workosclient.auth.HttpBearerAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiClient extends JavaTimeFormatter {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);

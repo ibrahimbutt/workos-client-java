@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListUsers200Response.JSON_PROPERTY_LIST_METADATA
 })
 @JsonTypeName("listUsers_200_response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ListUsers200Response {
   public static final String JSON_PROPERTY_DATA = "data";
   private List<User> data;
@@ -65,7 +65,7 @@ public class ListUsers200Response {
    * Get data
    * @return data
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -91,7 +91,7 @@ public class ListUsers200Response {
    * Get listMetadata
    * @return listMetadata
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_LIST_METADATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 

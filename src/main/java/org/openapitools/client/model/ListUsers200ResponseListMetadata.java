@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListUsers200ResponseListMetadata.JSON_PROPERTY_AFTER
 })
 @JsonTypeName("listUsers_200_response_list_metadata")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-03T18:52:34.218849Z[Europe/London]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ListUsers200ResponseListMetadata {
   public static final String JSON_PROPERTY_BEFORE = "before";
   private String before;
@@ -52,7 +52,7 @@ public class ListUsers200ResponseListMetadata {
    * The user id to use as a cursor for pagination
    * @return before
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BEFORE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -78,7 +78,7 @@ public class ListUsers200ResponseListMetadata {
    * The user id to use as a cursor for pagination
    * @return after
   **/
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_AFTER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
