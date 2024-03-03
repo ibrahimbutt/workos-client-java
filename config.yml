@@ -8,3 +8,4 @@ additionalProperties:
   artifactId: workos-client
   artifactVersion: 0.1.0
   buildTool: maven
+  useJakartaEe: true
