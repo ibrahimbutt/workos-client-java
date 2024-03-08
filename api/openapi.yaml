@@ -6,6 +6,39 @@ info:
 servers:
 - url: https://api.workos.com
 paths:
+  /user_management/authenticate:
+    post:
+      operationId: authenticateUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/authenticateUser_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthenticatedUserResponse'
+          description: User authenticated successfully
+        "400":
+          description: Bad request
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: User not found
+        "429":
+          description: Too many requests
+        "500":
+          description: Internal server error
+      summary: Authenticate a user with a verification code
+      tags:
+      - Users
+      x-content-type: application/json
+      x-accepts: application/json
   /user_management/users:
     get:
       operationId: listUsers
@@ -219,7 +252,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/sendVerificationEmail_200_response'
+                $ref: '#/components/schemas/AuthenticatedUserResponse'
           description: Sent verification email successfully
         "401":
           description: Unauthorized
@@ -237,8 +270,88 @@ paths:
       tags:
       - Users
       x-accepts: application/json
+  /user_management/users/{id}/email_verification/confirm:
+    post:
+      operationId: confirmEmail
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/confirmEmail_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthenticatedUserResponse'
+          description: Confirmed email address successfully
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: User not found
+        "429":
+          description: Too many requests
+        "500":
+          description: Internal server error
+      summary: Confirm a user's email address
+      tags:
+      - Users
+      x-content-type: application/json
+      x-accepts: application/json
 components:
   schemas:
+    PasswordAuthenticationRequest:
+      properties:
+        client_id:
+          description: The client id of the application
+          type: string
+        client_secret:
+          description: The client secret of the application
+          type: string
+        email:
+          description: The user's email address
+          format: email
+          type: string
+        password:
+          description: The user's password
+          type: string
+      required:
+      - client_id
+      - client_secret
+      - email
+      - password
+      type: object
+    EmailVerificationCodeAuthenticationRequest:
+      properties:
+        client_id:
+          description: The client id of the application
+          type: string
+        client_secret:
+          description: The client secret of the application
+          type: string
+        code:
+          description: The verification code sent to the user's email address
+          type: string
+        pending_authentication_token:
+          description: The pending authentication token
+          type: string
+      required:
+      - client_id
+      - client_secret
+      - code
+      - pending_authentication_token
+      type: object
     CreateUserRequest:
       example:
         password: password
@@ -348,6 +461,37 @@ components:
       - id
       - updated_at
       type: object
+    AuthenticatedUserResponse:
+      example:
+        user:
+          email_verified: false
+          updated_at: 2000-01-23T04:56:07.000+00:00
+          profile_picture_url: https://openapi-generator.tech
+          last_name: last_name
+          created_at: 2000-01-23T04:56:07.000+00:00
+          id: id
+          first_name: first_name
+          email: email
+          object: user
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+    EmailVerificationRequiredResponse:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        email:
+          format: email
+          type: string
+        pending_authentication_token:
+          type: string
+      type: object
+    authenticateUser_request:
+      oneOf:
+      - $ref: '#/components/schemas/PasswordAuthenticationRequest'
+      - $ref: '#/components/schemas/EmailVerificationCodeAuthenticationRequest'
     listUsers_200_response_list_metadata:
       example:
         before: user_01E4ZCR3C56J083X43JQXF3JK5
@@ -394,21 +538,11 @@ components:
         list_metadata:
           $ref: '#/components/schemas/listUsers_200_response_list_metadata'
       type: object
-    sendVerificationEmail_200_response:
-      example:
-        user:
-          email_verified: false
-          updated_at: 2000-01-23T04:56:07.000+00:00
-          profile_picture_url: https://openapi-generator.tech
-          last_name: last_name
-          created_at: 2000-01-23T04:56:07.000+00:00
-          id: id
-          first_name: first_name
-          email: email
-          object: user
+    confirmEmail_request:
       properties:
-        user:
-          $ref: '#/components/schemas/User'
+        code:
+          description: The verification code sent to the user's email address
+          type: string
       type: object
   securitySchemes:
     BearerAuth:

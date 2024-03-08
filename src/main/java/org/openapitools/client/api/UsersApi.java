@@ -2,9 +2,11 @@ package org.openapitools.client.api;
 
 import com.madebyibrahim.workosclient.ApiClient;
 
+import org.openapitools.client.model.AuthenticateUserRequest;
+import org.openapitools.client.model.AuthenticatedUserResponse;
+import org.openapitools.client.model.ConfirmEmailRequest;
 import org.openapitools.client.model.CreateUserRequest;
 import org.openapitools.client.model.ListUsers200Response;
-import org.openapitools.client.model.SendVerificationEmail200Response;
 import org.openapitools.client.model.UpdateUserRequest;
 import org.openapitools.client.model.User;
 
@@ -49,6 +51,134 @@ public class UsersApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Authenticate a user with a verification code
+     * 
+     * <p><b>200</b> - User authenticated successfully
+     * <p><b>400</b> - Bad request
+     * <p><b>401</b> - Unauthorized
+     * <p><b>403</b> - Forbidden
+     * <p><b>404</b> - User not found
+     * <p><b>429</b> - Too many requests
+     * <p><b>500</b> - Internal server error
+     * @param authenticateUserRequest  (required)
+     * @return AuthenticatedUserResponse
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public AuthenticatedUserResponse authenticateUser(AuthenticateUserRequest authenticateUserRequest) throws RestClientException {
+        return authenticateUserWithHttpInfo(authenticateUserRequest).getBody();
+    }
+
+    /**
+     * Authenticate a user with a verification code
+     * 
+     * <p><b>200</b> - User authenticated successfully
+     * <p><b>400</b> - Bad request
+     * <p><b>401</b> - Unauthorized
+     * <p><b>403</b> - Forbidden
+     * <p><b>404</b> - User not found
+     * <p><b>429</b> - Too many requests
+     * <p><b>500</b> - Internal server error
+     * @param authenticateUserRequest  (required)
+     * @return ResponseEntity&lt;AuthenticatedUserResponse&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<AuthenticatedUserResponse> authenticateUserWithHttpInfo(AuthenticateUserRequest authenticateUserRequest) throws RestClientException {
+        Object localVarPostBody = authenticateUserRequest;
+        
+        // verify the required parameter 'authenticateUserRequest' is set
+        if (authenticateUserRequest == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'authenticateUserRequest' when calling authenticateUser");
+        }
+        
+
+        final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders localVarHeaderParams = new HttpHeaders();
+        final MultiValueMap<String, String> localVarCookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap<String, Object> localVarFormParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] localVarAccepts = { 
+            "application/json"
+         };
+        final List<MediaType> localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        final String[] localVarContentTypes = { 
+            "application/json"
+         };
+        final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String[] localVarAuthNames = new String[] {  };
+
+        ParameterizedTypeReference<AuthenticatedUserResponse> localReturnType = new ParameterizedTypeReference<AuthenticatedUserResponse>() {};
+        return apiClient.invokeAPI("/user_management/authenticate", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+    }
+    /**
+     * Confirm a user&#39;s email address
+     * 
+     * <p><b>200</b> - Confirmed email address successfully
+     * <p><b>401</b> - Unauthorized
+     * <p><b>403</b> - Forbidden
+     * <p><b>404</b> - User not found
+     * <p><b>429</b> - Too many requests
+     * <p><b>500</b> - Internal server error
+     * @param id  (required)
+     * @param confirmEmailRequest  (required)
+     * @return AuthenticatedUserResponse
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public AuthenticatedUserResponse confirmEmail(String id, ConfirmEmailRequest confirmEmailRequest) throws RestClientException {
+        return confirmEmailWithHttpInfo(id, confirmEmailRequest).getBody();
+    }
+
+    /**
+     * Confirm a user&#39;s email address
+     * 
+     * <p><b>200</b> - Confirmed email address successfully
+     * <p><b>401</b> - Unauthorized
+     * <p><b>403</b> - Forbidden
+     * <p><b>404</b> - User not found
+     * <p><b>429</b> - Too many requests
+     * <p><b>500</b> - Internal server error
+     * @param id  (required)
+     * @param confirmEmailRequest  (required)
+     * @return ResponseEntity&lt;AuthenticatedUserResponse&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<AuthenticatedUserResponse> confirmEmailWithHttpInfo(String id, ConfirmEmailRequest confirmEmailRequest) throws RestClientException {
+        Object localVarPostBody = confirmEmailRequest;
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'id' when calling confirmEmail");
+        }
+        
+        // verify the required parameter 'confirmEmailRequest' is set
+        if (confirmEmailRequest == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'confirmEmailRequest' when calling confirmEmail");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("id", id);
+
+        final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders localVarHeaderParams = new HttpHeaders();
+        final MultiValueMap<String, String> localVarCookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap<String, Object> localVarFormParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] localVarAccepts = { 
+            "application/json"
+         };
+        final List<MediaType> localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        final String[] localVarContentTypes = { 
+            "application/json"
+         };
+        final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String[] localVarAuthNames = new String[] {  };
+
+        ParameterizedTypeReference<AuthenticatedUserResponse> localReturnType = new ParameterizedTypeReference<AuthenticatedUserResponse>() {};
+        return apiClient.invokeAPI("/user_management/users/{id}/email_verification/confirm", HttpMethod.POST, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+    }
     /**
      * Create a new user
      * 
@@ -293,10 +423,10 @@ public class UsersApi {
      * <p><b>429</b> - Too many requests
      * <p><b>500</b> - Internal server error
      * @param id  (required)
-     * @return SendVerificationEmail200Response
+     * @return AuthenticatedUserResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public SendVerificationEmail200Response sendVerificationEmail(String id) throws RestClientException {
+    public AuthenticatedUserResponse sendVerificationEmail(String id) throws RestClientException {
         return sendVerificationEmailWithHttpInfo(id).getBody();
     }
 
@@ -310,10 +440,10 @@ public class UsersApi {
      * <p><b>429</b> - Too many requests
      * <p><b>500</b> - Internal server error
      * @param id  (required)
-     * @return ResponseEntity&lt;SendVerificationEmail200Response&gt;
+     * @return ResponseEntity&lt;AuthenticatedUserResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<SendVerificationEmail200Response> sendVerificationEmailWithHttpInfo(String id) throws RestClientException {
+    public ResponseEntity<AuthenticatedUserResponse> sendVerificationEmailWithHttpInfo(String id) throws RestClientException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'id' is set
@@ -339,7 +469,7 @@ public class UsersApi {
 
         String[] localVarAuthNames = new String[] { "BearerAuth" };
 
-        ParameterizedTypeReference<SendVerificationEmail200Response> localReturnType = new ParameterizedTypeReference<SendVerificationEmail200Response>() {};
+        ParameterizedTypeReference<AuthenticatedUserResponse> localReturnType = new ParameterizedTypeReference<AuthenticatedUserResponse>() {};
         return apiClient.invokeAPI("/user_management/users/{id}/email_verification/send", HttpMethod.POST, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
     /**

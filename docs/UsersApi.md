@@ -4,6 +4,8 @@ All URIs are relative to *https://api.workos.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**authenticateUser**](UsersApi.md#authenticateUser) | **POST** /user_management/authenticate | Authenticate a user with a verification code |
+| [**confirmEmail**](UsersApi.md#confirmEmail) | **POST** /user_management/users/{id}/email_verification/confirm | Confirm a user&#39;s email address |
 | [**createUser**](UsersApi.md#createUser) | **POST** /user_management/users | Create a new user |
 | [**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /user_management/users/{id} | Delete a user by ID |
 | [**getUser**](UsersApi.md#getUser) | **GET** /user_management/users/{id} | Get a user by ID |
@@ -11,6 +13,147 @@ All URIs are relative to *https://api.workos.com*
 | [**sendVerificationEmail**](UsersApi.md#sendVerificationEmail) | **POST** /user_management/users/{id}/email_verification/send | Send a verification email |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /user_management/users/{id} | Update a user by ID |
 
+
+
+## authenticateUser
+
+> AuthenticatedUserResponse authenticateUser(authenticateUserRequest)
+
+Authenticate a user with a verification code
+
+### Example
+
+```java
+// Import classes:
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.models.*;
+import org.openapitools.client.api.UsersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.workos.com");
+
+        UsersApi apiInstance = new UsersApi(defaultClient);
+        AuthenticateUserRequest authenticateUserRequest = new AuthenticateUserRequest(); // AuthenticateUserRequest | 
+        try {
+            AuthenticatedUserResponse result = apiInstance.authenticateUser(authenticateUserRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#authenticateUser");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **authenticateUserRequest** | [**AuthenticateUserRequest**](AuthenticateUserRequest.md)|  | |
+
+### Return type
+
+[**AuthenticatedUserResponse**](AuthenticatedUserResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | User authenticated successfully |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | User not found |  -  |
+| **429** | Too many requests |  -  |
+| **500** | Internal server error |  -  |
+
+
+## confirmEmail
+
+> AuthenticatedUserResponse confirmEmail(id, confirmEmailRequest)
+
+Confirm a user&#39;s email address
+
+### Example
+
+```java
+// Import classes:
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.models.*;
+import org.openapitools.client.api.UsersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.workos.com");
+
+        UsersApi apiInstance = new UsersApi(defaultClient);
+        String id = "id_example"; // String | 
+        ConfirmEmailRequest confirmEmailRequest = new ConfirmEmailRequest(); // ConfirmEmailRequest | 
+        try {
+            AuthenticatedUserResponse result = apiInstance.confirmEmail(id, confirmEmailRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#confirmEmail");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+| **confirmEmailRequest** | [**ConfirmEmailRequest**](ConfirmEmailRequest.md)|  | |
+
+### Return type
+
+[**AuthenticatedUserResponse**](AuthenticatedUserResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Confirmed email address successfully |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | User not found |  -  |
+| **429** | Too many requests |  -  |
+| **500** | Internal server error |  -  |
 
 
 ## createUser
@@ -315,7 +458,7 @@ public class Example {
 
 ## sendVerificationEmail
 
-> SendVerificationEmail200Response sendVerificationEmail(id)
+> AuthenticatedUserResponse sendVerificationEmail(id)
 
 Send a verification email
 
@@ -342,7 +485,7 @@ public class Example {
         UsersApi apiInstance = new UsersApi(defaultClient);
         String id = "id_example"; // String | 
         try {
-            SendVerificationEmail200Response result = apiInstance.sendVerificationEmail(id);
+            AuthenticatedUserResponse result = apiInstance.sendVerificationEmail(id);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UsersApi#sendVerificationEmail");
@@ -364,7 +507,7 @@ public class Example {
 
 ### Return type
 
-[**SendVerificationEmail200Response**](SendVerificationEmail200Response.md)
+[**AuthenticatedUserResponse**](AuthenticatedUserResponse.md)
 
 ### Authorization
 

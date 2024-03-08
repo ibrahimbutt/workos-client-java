@@ -90,17 +90,13 @@ public class UsersApiExample {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("https://api.workos.com");
         
-        // Configure HTTP bearer authorization: BearerAuth
-        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
-        BearerAuth.setBearerToken("BEARER TOKEN");
-
         UsersApi apiInstance = new UsersApi(defaultClient);
-        CreateUserRequest createUserRequest = new CreateUserRequest(); // CreateUserRequest | 
+        AuthenticateUserRequest authenticateUserRequest = new AuthenticateUserRequest(); // AuthenticateUserRequest | 
         try {
-            User result = apiInstance.createUser(createUserRequest);
+            AuthenticatedUserResponse result = apiInstance.authenticateUser(authenticateUserRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling UsersApi#createUser");
+            System.err.println("Exception when calling UsersApi#authenticateUser");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -117,6 +113,8 @@ All URIs are relative to *https://api.workos.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*UsersApi* | [**authenticateUser**](docs/UsersApi.md#authenticateUser) | **POST** /user_management/authenticate | Authenticate a user with a verification code
+*UsersApi* | [**confirmEmail**](docs/UsersApi.md#confirmEmail) | **POST** /user_management/users/{id}/email_verification/confirm | Confirm a user&#39;s email address
 *UsersApi* | [**createUser**](docs/UsersApi.md#createUser) | **POST** /user_management/users | Create a new user
 *UsersApi* | [**deleteUser**](docs/UsersApi.md#deleteUser) | **DELETE** /user_management/users/{id} | Delete a user by ID
 *UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /user_management/users/{id} | Get a user by ID
@@ -127,10 +125,15 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AuthenticateUserRequest](docs/AuthenticateUserRequest.md)
+ - [AuthenticatedUserResponse](docs/AuthenticatedUserResponse.md)
+ - [ConfirmEmailRequest](docs/ConfirmEmailRequest.md)
  - [CreateUserRequest](docs/CreateUserRequest.md)
+ - [EmailVerificationCodeAuthenticationRequest](docs/EmailVerificationCodeAuthenticationRequest.md)
+ - [EmailVerificationRequiredResponse](docs/EmailVerificationRequiredResponse.md)
  - [ListUsers200Response](docs/ListUsers200Response.md)
  - [ListUsers200ResponseListMetadata](docs/ListUsers200ResponseListMetadata.md)
- - [SendVerificationEmail200Response](docs/SendVerificationEmail200Response.md)
+ - [PasswordAuthenticationRequest](docs/PasswordAuthenticationRequest.md)
  - [UpdateUserRequest](docs/UpdateUserRequest.md)
  - [User](docs/User.md)
 
