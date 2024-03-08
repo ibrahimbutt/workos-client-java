@@ -7,6 +7,7 @@ All URIs are relative to *https://api.workos.com*
 | [**createUser**](UsersApi.md#createUser) | **POST** /user_management/users | Create a new user |
 | [**getUser**](UsersApi.md#getUser) | **GET** /user_management/users/{id} | Get a user by ID |
 | [**listUsers**](UsersApi.md#listUsers) | **GET** /user_management/users | Get all users |
+| [**sendVerificationEmail**](UsersApi.md#sendVerificationEmail) | **POST** /user_management/users/{id}/email_verification/send | Send a verification email |
 | [**updateUser**](UsersApi.md#updateUser) | **PUT** /user_management/users/{id} | Update a user by ID |
 
 
@@ -234,6 +235,80 @@ public class Example {
 | **200** | A list of users |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
+| **429** | Too many requests |  -  |
+| **500** | Internal server error |  -  |
+
+
+## sendVerificationEmail
+
+> SendVerificationEmail200Response sendVerificationEmail(id)
+
+Send a verification email
+
+### Example
+
+```java
+// Import classes:
+import com.madebyibrahim.workosclient.ApiClient;
+import com.madebyibrahim.workosclient.ApiException;
+import com.madebyibrahim.workosclient.Configuration;
+import com.madebyibrahim.workosclient.auth.*;
+import com.madebyibrahim.workosclient.models.*;
+import org.openapitools.client.api.UsersApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.workos.com");
+        
+        // Configure HTTP bearer authorization: BearerAuth
+        HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+        BearerAuth.setBearerToken("BEARER TOKEN");
+
+        UsersApi apiInstance = new UsersApi(defaultClient);
+        String id = "id_example"; // String | 
+        try {
+            SendVerificationEmail200Response result = apiInstance.sendVerificationEmail(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UsersApi#sendVerificationEmail");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+
+### Return type
+
+[**SendVerificationEmail200Response**](SendVerificationEmail200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Sent verification email successfully |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | User not found |  -  |
 | **429** | Too many requests |  -  |
 | **500** | Internal server error |  -  |
 

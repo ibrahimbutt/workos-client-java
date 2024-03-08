@@ -169,6 +169,40 @@ paths:
           description: Too many requests
         '500':
           description: Internal server error
+  /user_management/users/{id}/email_verification/send:
+    post:
+      summary: Send a verification email
+      operationId: sendVerificationEmail
+      tags:
+        - Users
+      security:
+        - BearerAuth: [ ]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Sent verification email successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: User not found
+        '429':
+          description: Too many requests
+        '500':
+          description: Internal server error
 components:
   securitySchemes:
     BearerAuth:

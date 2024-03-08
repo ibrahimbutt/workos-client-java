@@ -4,6 +4,7 @@ import com.madebyibrahim.workosclient.ApiClient;
 
 import org.openapitools.client.model.CreateUserRequest;
 import org.openapitools.client.model.ListUsers200Response;
+import org.openapitools.client.model.SendVerificationEmail200Response;
 import org.openapitools.client.model.UpdateUserRequest;
 import org.openapitools.client.model.User;
 
@@ -225,6 +226,65 @@ public class UsersApi {
 
         ParameterizedTypeReference<ListUsers200Response> localReturnType = new ParameterizedTypeReference<ListUsers200Response>() {};
         return apiClient.invokeAPI("/user_management/users", HttpMethod.GET, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+    }
+    /**
+     * Send a verification email
+     * 
+     * <p><b>200</b> - Sent verification email successfully
+     * <p><b>401</b> - Unauthorized
+     * <p><b>403</b> - Forbidden
+     * <p><b>404</b> - User not found
+     * <p><b>429</b> - Too many requests
+     * <p><b>500</b> - Internal server error
+     * @param id  (required)
+     * @return SendVerificationEmail200Response
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public SendVerificationEmail200Response sendVerificationEmail(String id) throws RestClientException {
+        return sendVerificationEmailWithHttpInfo(id).getBody();
+    }
+
+    /**
+     * Send a verification email
+     * 
+     * <p><b>200</b> - Sent verification email successfully
+     * <p><b>401</b> - Unauthorized
+     * <p><b>403</b> - Forbidden
+     * <p><b>404</b> - User not found
+     * <p><b>429</b> - Too many requests
+     * <p><b>500</b> - Internal server error
+     * @param id  (required)
+     * @return ResponseEntity&lt;SendVerificationEmail200Response&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<SendVerificationEmail200Response> sendVerificationEmailWithHttpInfo(String id) throws RestClientException {
+        Object localVarPostBody = null;
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'id' when calling sendVerificationEmail");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("id", id);
+
+        final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders localVarHeaderParams = new HttpHeaders();
+        final MultiValueMap<String, String> localVarCookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap<String, Object> localVarFormParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] localVarAccepts = { 
+            "application/json"
+         };
+        final List<MediaType> localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        final String[] localVarContentTypes = {  };
+        final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+
+        ParameterizedTypeReference<SendVerificationEmail200Response> localReturnType = new ParameterizedTypeReference<SendVerificationEmail200Response>() {};
+        return apiClient.invokeAPI("/user_management/users/{id}/email_verification/send", HttpMethod.POST, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
     /**
      * Update a user by ID

@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**createUser**](docs/UsersApi.md#createUser) | **POST** /user_management/users | Create a new user
 *UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /user_management/users/{id} | Get a user by ID
 *UsersApi* | [**listUsers**](docs/UsersApi.md#listUsers) | **GET** /user_management/users | Get all users
+*UsersApi* | [**sendVerificationEmail**](docs/UsersApi.md#sendVerificationEmail) | **POST** /user_management/users/{id}/email_verification/send | Send a verification email
 *UsersApi* | [**updateUser**](docs/UsersApi.md#updateUser) | **PUT** /user_management/users/{id} | Update a user by ID
 
 
@@ -128,6 +129,7 @@ Class | Method | HTTP request | Description
  - [CreateUserRequest](docs/CreateUserRequest.md)
  - [ListUsers200Response](docs/ListUsers200Response.md)
  - [ListUsers200ResponseListMetadata](docs/ListUsers200ResponseListMetadata.md)
+ - [SendVerificationEmail200Response](docs/SendVerificationEmail200Response.md)
  - [UpdateUserRequest](docs/UpdateUserRequest.md)
  - [User](docs/User.md)
 
