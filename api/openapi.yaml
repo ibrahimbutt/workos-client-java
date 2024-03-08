@@ -99,6 +99,35 @@ paths:
       x-content-type: application/json
       x-accepts: application/json
   /user_management/users/{id}:
+    delete:
+      operationId: deleteUser
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: User deleted successfully
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: User not found
+        "429":
+          description: Too many requests
+        "500":
+          description: Internal server error
+      security:
+      - BearerAuth: []
+      summary: Delete a user by ID
+      tags:
+      - Users
+      x-accepts: application/json
     get:
       operationId: getUser
       parameters:

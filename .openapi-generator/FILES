@@ -36,4 +36,3 @@ src/main/java/org/openapitools/client/model/ListUsers200ResponseListMetadata.jav
 src/main/java/org/openapitools/client/model/SendVerificationEmail200Response.java
 src/main/java/org/openapitools/client/model/UpdateUserRequest.java
 src/main/java/org/openapitools/client/model/User.java
-src/test/java/org/openapitools/client/model/SendVerificationEmail200ResponseTest.java

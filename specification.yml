@@ -169,6 +169,32 @@ paths:
           description: Too many requests
         '500':
           description: Internal server error
+    delete:
+      summary: Delete a user by ID
+      operationId: deleteUser
+      tags:
+        - Users
+      security:
+        - BearerAuth: [ ]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User deleted successfully
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: User not found
+        '429':
+          description: Too many requests
+        '500':
+          description: Internal server error
   /user_management/users/{id}/email_verification/send:
     post:
       summary: Send a verification email
