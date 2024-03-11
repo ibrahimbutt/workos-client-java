@@ -273,4 +273,11 @@
         <jakarta-annotation-version>2.1.1</jakarta-annotation-version>
         <junit-version>4.13.2</junit-version>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/ibrahimbutt/workos-client-java</url>
+        </repository>
+    </distributionManagement>
 </project>
