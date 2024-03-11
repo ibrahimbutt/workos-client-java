@@ -9,7 +9,7 @@ servers:
 paths:
   /user_management/authenticate:
     post:
-      summary: Authenticate a user with a verification code
+      summary: Authenticate a user
       operationId: authenticateUser
       tags:
         - Users
