@@ -29,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonPropertyOrder({
   PasswordAuthenticationRequest.JSON_PROPERTY_CLIENT_ID,
   PasswordAuthenticationRequest.JSON_PROPERTY_CLIENT_SECRET,
+  PasswordAuthenticationRequest.JSON_PROPERTY_GRANT_TYPE,
   PasswordAuthenticationRequest.JSON_PROPERTY_EMAIL,
   PasswordAuthenticationRequest.JSON_PROPERTY_PASSWORD
 })
@@ -39,6 +40,42 @@ public class PasswordAuthenticationRequest {
 
   public static final String JSON_PROPERTY_CLIENT_SECRET = "client_secret";
   private String clientSecret;
+
+  /**
+   * The grant type of the application
+   */
+  public enum GrantTypeEnum {
+    PASSWORD("password");
+
+    private String value;
+
+    GrantTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static GrantTypeEnum fromValue(String value) {
+      for (GrantTypeEnum b : GrantTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_GRANT_TYPE = "grant_type";
+  private GrantTypeEnum grantType;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   private String email;
@@ -98,6 +135,32 @@ public class PasswordAuthenticationRequest {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setClientSecret(String clientSecret) {
     this.clientSecret = clientSecret;
+  }
+
+
+  public PasswordAuthenticationRequest grantType(GrantTypeEnum grantType) {
+    
+    this.grantType = grantType;
+    return this;
+  }
+
+   /**
+   * The grant type of the application
+   * @return grantType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_GRANT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public GrantTypeEnum getGrantType() {
+    return grantType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_GRANT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGrantType(GrantTypeEnum grantType) {
+    this.grantType = grantType;
   }
 
 
@@ -163,13 +226,14 @@ public class PasswordAuthenticationRequest {
     PasswordAuthenticationRequest passwordAuthenticationRequest = (PasswordAuthenticationRequest) o;
     return Objects.equals(this.clientId, passwordAuthenticationRequest.clientId) &&
         Objects.equals(this.clientSecret, passwordAuthenticationRequest.clientSecret) &&
+        Objects.equals(this.grantType, passwordAuthenticationRequest.grantType) &&
         Objects.equals(this.email, passwordAuthenticationRequest.email) &&
         Objects.equals(this.password, passwordAuthenticationRequest.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, clientSecret, email, password);
+    return Objects.hash(clientId, clientSecret, grantType, email, password);
   }
 
   @Override
@@ -178,6 +242,7 @@ public class PasswordAuthenticationRequest {
     sb.append("class PasswordAuthenticationRequest {\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
+    sb.append("    grantType: ").append(toIndentedString(grantType)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");

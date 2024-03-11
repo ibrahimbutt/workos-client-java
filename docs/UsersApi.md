@@ -4,7 +4,7 @@ All URIs are relative to *https://api.workos.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**authenticateUser**](UsersApi.md#authenticateUser) | **POST** /user_management/authenticate | Authenticate a user with a verification code |
+| [**authenticateUser**](UsersApi.md#authenticateUser) | **POST** /user_management/authenticate | Authenticate a user |
 | [**confirmEmail**](UsersApi.md#confirmEmail) | **POST** /user_management/users/{id}/email_verification/confirm | Confirm a user&#39;s email address |
 | [**createUser**](UsersApi.md#createUser) | **POST** /user_management/users | Create a new user |
 | [**deleteUser**](UsersApi.md#deleteUser) | **DELETE** /user_management/users/{id} | Delete a user by ID |
@@ -19,7 +19,7 @@ All URIs are relative to *https://api.workos.com*
 
 > AuthenticatedUserResponse authenticateUser(authenticateUserRequest)
 
-Authenticate a user with a verification code
+Authenticate a user
 
 ### Example
 

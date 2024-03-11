@@ -52,7 +52,7 @@ public class UsersApi {
     }
 
     /**
-     * Authenticate a user with a verification code
+     * Authenticate a user
      * 
      * <p><b>200</b> - User authenticated successfully
      * <p><b>400</b> - Bad request
@@ -70,7 +70,7 @@ public class UsersApi {
     }
 
     /**
-     * Authenticate a user with a verification code
+     * Authenticate a user
      * 
      * <p><b>200</b> - User authenticated successfully
      * <p><b>400</b> - Bad request

@@ -46,9 +46,3 @@ src/main/java/org/openapitools/client/model/ListUsers200ResponseListMetadata.jav
 src/main/java/org/openapitools/client/model/PasswordAuthenticationRequest.java
 src/main/java/org/openapitools/client/model/UpdateUserRequest.java
 src/main/java/org/openapitools/client/model/User.java
-src/test/java/org/openapitools/client/model/AuthenticateUserRequestTest.java
-src/test/java/org/openapitools/client/model/AuthenticatedUserResponseTest.java
-src/test/java/org/openapitools/client/model/ConfirmEmailRequestTest.java
-src/test/java/org/openapitools/client/model/EmailVerificationCodeAuthenticationRequestTest.java
-src/test/java/org/openapitools/client/model/EmailVerificationRequiredResponseTest.java
-src/test/java/org/openapitools/client/model/PasswordAuthenticationRequestTest.java

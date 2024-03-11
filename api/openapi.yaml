@@ -34,7 +34,7 @@ paths:
           description: Too many requests
         "500":
           description: Internal server error
-      summary: Authenticate a user with a verification code
+      summary: Authenticate a user
       tags:
       - Users
       x-content-type: application/json
@@ -318,6 +318,11 @@ components:
           type: string
         client_secret:
           description: The client secret of the application
+          type: string
+        grant_type:
+          description: The grant type of the application
+          enum:
+          - password
           type: string
         email:
           description: The user's email address

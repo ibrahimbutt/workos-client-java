@@ -319,6 +319,11 @@ components:
         client_secret:
           type: string
           description: The client secret of the application
+        grant_type:
+          type: string
+          description: The grant type of the application
+          enum:
+            - password
         email:
           type: string
           format: email

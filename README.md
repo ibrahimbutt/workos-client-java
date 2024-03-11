@@ -113,7 +113,7 @@ All URIs are relative to *https://api.workos.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*UsersApi* | [**authenticateUser**](docs/UsersApi.md#authenticateUser) | **POST** /user_management/authenticate | Authenticate a user with a verification code
+*UsersApi* | [**authenticateUser**](docs/UsersApi.md#authenticateUser) | **POST** /user_management/authenticate | Authenticate a user
 *UsersApi* | [**confirmEmail**](docs/UsersApi.md#confirmEmail) | **POST** /user_management/users/{id}/email_verification/confirm | Confirm a user&#39;s email address
 *UsersApi* | [**createUser**](docs/UsersApi.md#createUser) | **POST** /user_management/users | Create a new user
 *UsersApi* | [**deleteUser**](docs/UsersApi.md#deleteUser) | **DELETE** /user_management/users/{id} | Delete a user by ID
